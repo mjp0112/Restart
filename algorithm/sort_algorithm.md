@@ -4,7 +4,7 @@
 
 在线练习：https://lab.csdn.net/welcome
 
-![image-20211123220250985](sort algorithm.assets/image-20211123220250985.png)
+![image-20211123220250985](sort_algorithm.assets/image-20211123220250985.png)
 
 
 
@@ -66,7 +66,7 @@ public int[] bubblingSort( int[] nums) {
 
 ​	c2 = 2i + 2
 
-![image-20211202122951448](sort algorithm.assets/image-20211202122951448.png)
+![image-20211202122951448](sort_algorithm.assets/image-20211202122951448.png)
 
 
 

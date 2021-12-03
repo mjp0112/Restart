@@ -16,7 +16,9 @@
 
 所以跟树的结构有关：
 
-![image-20211128194939557](Data Structure.assets/image-20211128194939557.png)
+
+
+![image-20211128194939557](Data_Structure.assets/image-20211128194939557.png)
 
 所以要平衡二叉树：对于任意一个子结点|Height(LeftTree) - Height(RightTree)| <=1
 

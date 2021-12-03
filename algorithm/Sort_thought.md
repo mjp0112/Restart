@@ -37,7 +37,7 @@ public int f(int n){
 
 #### 汉诺塔Hannota：
 
-![image-20211123110402564](Sort thought.assets/image-20211123110402564.png)
+![image-20211123110402564](Sort_thought.assets/image-20211123110402564.png)
 
 移动n个环到C时，需要先将n-1移动到B；
 
@@ -70,9 +70,9 @@ public static void hannoi(int n, char A, char B, char C){
 
 #### 1.求数组间隔数最大和
 
-![image-20211123175258019](Sort thought.assets/image-20211123175258019.png)
+![image-20211123175258019](Sort_thought.assets/image-20211123175258019.png)
 
-![image-20211123175343790](Sort thought.assets/image-20211123175343790.png)
+![image-20211123175343790](Sort_thought.assets/image-20211123175343790.png)
 
 
 
@@ -109,7 +109,7 @@ public static int rec_opt(int[] arr,int i){
 
 https://www.bilibili.com/video/BV12W411v7rd?spm_id_from=333.999.0.0
 
-![image-20211123212327380](Sort thought.assets/image-20211123212327380.png)
+![image-20211123212327380](Sort_thought.assets/image-20211123212327380.png)
 
 如图数组，判断是否能有数之和为9
 
