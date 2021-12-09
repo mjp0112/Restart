@@ -1,3 +1,5 @@
+
+
 ## 算法思想
 
 
@@ -12,9 +14,43 @@
 
 ### 递归
 
+==两个特点==
+
+1.调用自身
+
+2.结束语句
+
+
+
 #### 阶乘：
 
+输入一个正整数n，输出n!的值。其中n!=1*2*3*…*n, 即求阶乘
 
+```java
+public int factorial(int n) {
+    //临界条件
+    if (n < =1) {
+        return1;
+    }
+
+    // 递推公式
+    return n * factorial(n-1)
+}
+```
+
+#### 跳台阶
+
+一只青蛙可以一次跳 1 级台阶或一次跳 2 级台阶,例如:跳上第 1 级台阶只有一种跳法：直接跳 1 级即可。跳上第 2 级台阶有两种跳法：每次跳 1 级，跳两次；或者一次跳 2 级。问要跳上第 n 级台阶有多少种跳法？
+
+==如果，青蛙第一下跳一阶，则剩下跳法为f(n-1)；如果第一下为2，则剩下跳法为f(n-2)，所以可得f(n)=f(n-1)+f(n-2)==
+
+```java
+public int f(int n) {
+    if (n == 1) return1;
+    if (n == 2) return2;
+    return f(n-1) + f(n-2)
+}
+```
 
 
 
@@ -27,11 +63,26 @@ public int f(int n){
     }else{
    		return f(n-1)+f(n-2);
     }
+}
 
+
+//动态规划解决
+public int f(int target){
+	if(target == 1){
+        return 1;
+    }if(target == 2){
+        return 2;
+    }
+    int a = 1;
+    int b = 1;
+    for(int i=3;i<=target;i++){
+    	sum = a + b;
+        a = b;
+        b = sum;
+    }
+    
 }
 ```
-
-
 
 
 
@@ -62,6 +113,63 @@ public static void hannoi(int n, char A, char B, char C){
 }
 ```
 
+#### ==进阶==
+
+> 细胞分裂 有一个细胞 每一个小时分裂一次，一次分裂一个子细胞，第三个小时后会死亡。那么n个小时候有多少细胞？
+
+![图片](https://mmbiz.qpic.cn/mmbiz_png/OyweysCSeLWvDS0Xny7l5kj0Nj4znUDibK3VJALJuo8IxWjDvPuAWxvO5dbBaLn01GcDnIqiaKXbSWRvwmyEM1uQ/640?wx_fmt=png&tp=webp&wxfrom=5&wx_lazy=1&wx_co=1)
+
+如图所示，从第四个小时开始，我们可以得到一个方程f(n) =  fa(n)  + fb(n)  + fc(n) ；a代表第一个小时的细胞，b为第二个小时的细胞，c为第三个小时的细胞；
+
+即可递推方程式为：
+
+fa(n)  = fa(n-1) + fb(n-1) + fc(n-1) ， 当 n =1时，fa(1) = 1
+
+fb(n) = fa(n -1) , 当n=1时，为0；
+
+fc(n)  = fb(n-1) , 当n=1 或2 时，为0；
+
+```java
+public int allCells(int n) {
+    return aCell(n) + bCell(n) + cCell(n);
+}
+
+/**
+ * 第 n 小时 a 状态的细胞数
+ */
+public int aCell(int n) {
+    if(n==1){
+        return1;
+    }else{
+        return aCell(n-1)+bCell(n-1)+cCell(n-1);
+    }
+}
+
+/**
+ * 第 n 小时 b 状态的细胞数
+ */
+public int bCell(int n) {
+    if(n==1){
+        return0;
+    }else{
+        return aCell(n-1);
+    }
+}
+
+/**
+ * 第 n 小时 c 状态的细胞数
+ */
+public int cCell(int n) {
+    if(n==1 || n==2){
+        return0;
+    }else{
+        return bCell(n-1);
+    }
+}
+```
+
+
+
 
 
 
@@ -73,8 +181,6 @@ public static void hannoi(int n, char A, char B, char C){
 ![image-20211123175258019](Sort_thought.assets/image-20211123175258019.png)
 
 ![image-20211123175343790](Sort_thought.assets/image-20211123175343790.png)
-
-
 
 
 
@@ -162,4 +268,37 @@ public static boolean sum(int[] arr,int S){
 
 
 ```
+
+
+
+#### 3.连续子数组最大和
+
+> 给定一个整数数组 nums ，找到一个具有最大和的连续子数组（子数组最少包含一个元素），返回其最大和。
+
+状态转移方程为dp[i]: 以第i个结尾的最大序列和，即该点必选，则方程为；
+
+`dp[0] = arr[0]`
+
+`dp[i]=max(dp[i-1]+a[i],a[i])`
+
+依此可以得出代码位：
+
+```java
+public int maxSubArray(int[] nums) {
+    int dp[]=new int[nums.length];
+    int max=nums[0];
+    dp[0]=nums[0];
+    for(int i=1;i<nums.length;i++)
+    {
+      dp[i]=Math.max(dp[i-1]+nums[i],nums[i]);
+      if(dp[i]>max)
+        max=dp[i];
+    }
+    return max;
+}
+```
+
+
+
+
 
