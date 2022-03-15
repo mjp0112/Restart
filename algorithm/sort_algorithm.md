@@ -12,14 +12,18 @@
 
 #### 冒泡排序
 
+数组中，最大的值出现在最后一个位置；
 
+数组中，第二大的值出现在倒数第二个位置；
 
+...
 
+两两对比，大值放在后面；
 
 ```java
 public int[] bubblingSort( int[] nums) {
         int temp;
-        for(int i =0;i<nums.length;i++){
+        for(int i =0;i<nums.length-1;i++){
             for(int j=0;j<nums.length-i-1;j++){
                 if(nums[j]>nums[j+1]){
                     temp = nums[j];
@@ -29,7 +33,7 @@ public int[] bubblingSort( int[] nums) {
             }
         }
         return nums;
-    }
+}
 ```
 
 
@@ -38,7 +42,38 @@ public int[] bubblingSort( int[] nums) {
 
 
 
-#### 选择排序
+#### 简单选择排序
+
+数组中，最大的值出现在最后一个位置；（找到最大值的index，与最后一个位置交换）
+
+数组中，第二大的值出现在倒数第二个位置；
+
+...
+
+```java
+public int[] selectSort( int[] nums) {
+        
+    	for(int i =0;i<nums.length-1;i++){
+            int index = 0;
+            int max = nums[0];
+            for(int j =0;j<nums.length-i;j++){
+                if(nums[j]>max){
+                    index = j;
+                    max = nums[j];
+                }
+       		}
+            if(index!=nums.length-i-1){
+                int temp = nums[index];
+                nums[index] = nums[nums.length-i-1];
+                nums[nums.length-i-1] = temp;
+            }
+        }
+}
+```
+
+
+
+
 
 
 
