@@ -203,13 +203,7 @@ public class HelloWorld{
 
 ##### 4.2 权限修饰符
 
-public              本类、本包、其他包
-
-缺省的               本类、本包
-
-protected           
-
-private             本类
+![image-20220315161626643](JAVA02 Helloworld、封装.assets/image-20220315161626643.png)
 
 ==对类的权限修饰只能是public和缺省的==
 

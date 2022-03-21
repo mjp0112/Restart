@@ -1,3 +1,58 @@
+# 注解
+
+注释：不参与编译和运行，对代码解释
+
+注解：参与编译和运行
+
+
+
+### 注解的形式
+
+@注解名[(参数)]
+
+
+
+### 类型
+
+#### 文档注释内注解：
+
+@author name
+
+@version 
+
+....
+
+
+
+#### 普通注解
+
+添加在方法上方
+
+##### @OVerride 重载
+
+功能： 检测当前方法是否满足重写
+
+源码：
+
+```java
+//该注解作用位置
+@Target(ElementType.METHOD)
+//作用范围
+@Retention(RetentionPolicy.SOURCE)
+public @interface Override {
+}
+```
+
+
+
+##### @Deprecated 过时
+
+
+
+##### @SuppressWarnings 抑制警告
+
+
+
 # 反射   
 
 > ==问题引出为什么要有反射==

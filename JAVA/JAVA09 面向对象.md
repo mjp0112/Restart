@@ -153,7 +153,7 @@ public class DemoTool{
 
 
 
-#### 初始化快
+#### [初始化快](JAVA15 final、初始化块.md)
 
 
 
