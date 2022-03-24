@@ -80,16 +80,64 @@ INSERT INTO
 insert into t_user(id,name) values(1,'lucy'),(,'lucy'),(3,'lucy');
 
 
+```
+
+
+
+#### 修改语句
+
+```mysql
+update 表名称 set 字段名称=值，字段名称=值 where....
 
 #修改
-update t_user set name='lucyaaa' where id =1;
+update t_user set name='lucyaaa' where id =1;    
+
+#修改所有人的年龄+10
+update t_user set age=age+10;
+    
+```
+
+
+
+#### 删除语句
+
+delete关键字(DML语句）
+
+```mysql
 
 #删除
-delete from t_u
+delete from t_uer where id=2;
+```
 
+truncate关键字（DDL语句）
+
+删除表之后，在创建相同结构的表
+
+
+
+#### 查询操作
+
+```mysql
 #查
 select * from t_user;
+#语法
+select 字段1，字段2... from 表名称1，表名称2....
+where 条件
+group by 字段 having 条件表达式(筛选条件)
+order by 字段 [asc|desc]
+limit m,n
+
+
+#起别名 as可以省略
+select sid as id,sname as name from stu
+
+#查询id大于2并且年纪大于30的人
+select sid,sname,age,address from stu s where sid>2 and age>30
 ```
+
+飘符号（''）：变小写？
+
+
 
 
 
