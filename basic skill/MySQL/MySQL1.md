@@ -112,6 +112,6 @@ drop database db_0224;
 use 数据库名称;
 
 #查看当前数据库
-select database()；
+select database();
 ```
 
