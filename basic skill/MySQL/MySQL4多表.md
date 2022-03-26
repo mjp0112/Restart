@@ -27,13 +27,7 @@ FOREIGN KEY(edid) REFERENCES dept(did)
 
 ### 1.一对多关系
 
-部门和员工
-
-![image-20220324174250268](MySQL4 多表.assets/image-20220324174250268.png)
-
-
-
-
+部门和员工![image-20220324174250268](MySQL4多表.assets/image-20220324174250268.png)
 
 
 
@@ -41,7 +35,7 @@ FOREIGN KEY(edid) REFERENCES dept(did)
 
 课程和学生
 
-![image-20220324174047708](MySQL4 多表.assets/image-20220324174047708.png)
+![image-20220324174047708](MySQL4多表.assets/image-20220324174047708.png)
 
 
 
@@ -51,7 +45,7 @@ FOREIGN KEY(edid) REFERENCES dept(did)
 
 人和身份证
 
-![image-20220324174233725](MySQL4 多表.assets/image-20220324174233725.png)
+![image-20220324174233725](MySQL4多表.assets/image-20220324174233725.png)
 
 
 
@@ -69,11 +63,11 @@ FOREIGN KEY(edid) REFERENCES dept(did)
 
 dept表
 
-![image-20220325165900071](MySQL4 多表.assets/image-20220325165900071.png)
+![image-20220325165900071](MySQL4多表.assets/image-20220325165900071.png)
 
 emp表
 
-![image-20220325165951652](MySQL4 多表.assets/image-20220325165951652.png)
+![image-20220325165951652](MySQL4多表.assets/image-20220325165951652.png)
 
 #### 1.笛卡尔积
 
@@ -83,7 +77,7 @@ emp表
 select * from dept,emp;
 ```
 
-![image-20220325170051415](MySQL4 多表.assets/image-20220325170051415.png)
+![image-20220325170051415](MySQL4多表.assets/image-20220325170051415.png)
 
 
 
@@ -128,7 +122,7 @@ select * from dept right outer join emp on dept.did = emp.edid;
 
 #### 5.A表独有
 
-![image-20220325170403285](MySQL4 多表.assets/image-20220325170403285.png)
+![image-20220325170403285](MySQL4多表.assets/image-20220325170403285.png)
 
 ```mysql
 select * from dept left join emp on dept.did = emp.edid where emp.eid is null
@@ -138,7 +132,7 @@ select * from dept left join emp on dept.did = emp.edid where emp.eid is null
 
 #### 6.B表独有
 
-![image-20220325170715772](MySQL4 多表.assets/image-20220325170715772.png)
+![image-20220325170715772](MySQL4多表.assets/image-20220325170715772.png)
 
 ```mysql
 select * from dept right join emp on dept.did = emp.eid where dept.did is null

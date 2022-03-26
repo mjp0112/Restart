@@ -138,5 +138,5 @@ public class Demo{
 
 冲突：(不懂)
 
-![image-20220321041127350](JAVA20 内部类.assets/image-20220321041127350.png)
+![image-20220321041127350](JAVA20内部类.assets/image-20220321041127350.png)
 

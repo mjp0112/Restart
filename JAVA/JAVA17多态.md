@@ -120,6 +120,6 @@ System.gc：通知垃圾回收
 
 String存放位置的示意图
 
-![image-20220317113142557](JAVA17 多态.assets/image-20220317113142557.png)
+![image-20220317113142557](JAVA17多态.assets/image-20220317113142557.png)
 
 String重写了equals方法。

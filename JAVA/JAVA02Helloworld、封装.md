@@ -19,7 +19,7 @@
 
 ##### 内存划分
 
-![image-20220228154911510](JAVA02 Helloworld.assets/image-20220228154911510.png)
+![image-20220228154911510](JAVA02Helloworld.assets/image-20220228154911510.png)
 
 1虚拟机栈：
 
@@ -31,7 +31,7 @@
 
 ##### 例子 e.g.
 
-![image-20220228160715145](JAVA02 Helloworld.assets/image-20220228160715145.png)
+![image-20220228160715145](JAVA02Helloworld.assets/image-20220228160715145.png)
 
 
 
@@ -181,7 +181,7 @@ public class HelloWorld{
 
 #### 关键字
 
-![image-20220120162418845](JAVA02 Helloworld.assets/image-20220120162418845.png)
+![image-20220120162418845](JAVA02Helloworld.assets/image-20220120162418845.png)
 
 
 
@@ -203,7 +203,7 @@ public class HelloWorld{
 
 ##### 4.2 权限修饰符
 
-![image-20220315161626643](JAVA02 Helloworld、封装.assets/image-20220315161626643.png)
+![image-20220315161626643](JAVA02Helloworld、封装.assets/image-20220315161626643.png)
 
 ==对类的权限修饰只能是public和缺省的==
 

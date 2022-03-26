@@ -24,7 +24,7 @@ class Sub extends Super{
 
 3， 子类、父类、父类的父类均有同一个变量，无法访问父类的父类的变量；
 
-![image-20220313231233824](JAVA14 继承.assets/image-20220313231233824.png)
+![image-20220313231233824](JAVA14继承.assets/image-20220313231233824.png)
 
 
 
@@ -137,7 +137,7 @@ class So extends Fa{
 
 #### 内存图
 
-![image-20220314124429517](JAVA14 继承.assets/image-20220314124429517.png)
+![image-20220314124429517](JAVA14继承.assets/image-20220314124429517.png)
 
 
 

@@ -2,7 +2,7 @@
 
 面向对象(OOP)是一种编程思想
 
-![image-20220303104423220](JAVA09 面向对象.assets/image-20220303104423220.png)
+![image-20220303104423220](JAVA09面向对象.assets/image-20220303104423220.png)
 
 <div align = "center">new对象的内存使用</div>
 
@@ -78,7 +78,7 @@
 
 对象关联：
 
-![image-20220303114620854](JAVA09 面向对象.assets/image-20220303114620854.png)
+![image-20220303114620854](JAVA09面向对象.assets/image-20220303114620854.png)
 
 
 
