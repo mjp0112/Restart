@@ -185,3 +185,32 @@ select min(age) from emp
 select edid deptid,count(*) num from emp group by edid
 ```
 
+
+
+#### 2.exists
+
+查询部门信息，该部门必须有员工
+
+```mysql
+select * from dept
+where exits(select * from emp where dept.did=dept.edid)
+```
+
+
+
+
+
+#### 3.复制表
+
+```mysql
+#赋值表结构
+create table newemp like emp;
+#复制拷贝数据
+create table newemp as (select * from emp);
+
+#复制拷贝
+create table newemp like emp;
+insert into newemp select * from emp;
+
+```
+

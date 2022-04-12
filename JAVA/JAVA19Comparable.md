@@ -2,7 +2,7 @@
 
 java.lang.Comparable
 
-功能：实现Comparable接口，实现compareTothis和obj比大小；
+功能：实现Comparable接口，实现compareTo，this和obj比大小；
 
 ==返回值==
 

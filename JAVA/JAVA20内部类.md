@@ -35,7 +35,7 @@ public class Demo{
         };
         
         new Car(){
-          //Car的子类类  
+          //Car的子类  
         };
         
         new AbstraCar(){
