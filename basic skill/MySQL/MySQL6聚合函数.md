@@ -59,6 +59,23 @@ select * from emp order by eid desc
 
 
 
+#### 日期函数
+
+date(date)；
+
+DATE_FORMAT(date,format) 
+
+```mysql
+DATE_FORMAT(NOW(),'%b %d %Y %h:%i %p')
+DATE_FORMAT(NOW(),'%m-%d-%Y')
+DATE_FORMAT(NOW(),'%d %b %y')   #%b 英文的日期 Dec
+DATE_FORMAT(NOW(),'%d %b %Y %T:%f')
+```
+
+
+
+
+
 #### 查询范围
 
 ##### 查询年龄大于等于20小于等于50；
@@ -82,6 +99,10 @@ select * from emp where age between 20 and 50
 ```mysql
 select * from emp where age in(20,40,60)
 ```
+
+
+
+
 
 
 

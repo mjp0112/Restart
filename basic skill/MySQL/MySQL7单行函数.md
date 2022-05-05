@@ -2,8 +2,6 @@
 
 ### 单行函数
 
-
-
 1、通过select直接使用，不需要依赖表
 
  
@@ -26,6 +24,22 @@ SELECT NOW()
 
  
 
+
+
+SELECT DATABASE()
+
+SELECT VERSION()
+
+SELECT USER()
+
+SELECT PASSWORD("123")
+
+SELECT MD5('123456')
+
+
+
+#### CASE
+
 SELECT ename ,CASE 
 
 WHEN age>=50 THEN '事业顶峰'
@@ -41,18 +55,6 @@ END
 FROM emp;
 
  
-
-SELECT DATABASE()
-
-SELECT VERSION()
-
-SELECT USER()
-
-SELECT PASSWORD("123")
-
-SELECT MD5('123456')
-
-
 
 
 

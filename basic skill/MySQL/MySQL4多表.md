@@ -61,6 +61,10 @@ FOREIGN KEY(edid) REFERENCES dept(did)
 
 ### 关联查询
 
+
+
+
+
 dept表
 
 ![image-20220325165900071](MySQL4多表.assets/image-20220325165900071.png)
@@ -140,7 +144,11 @@ select * from dept right join emp on dept.did = emp.eid where dept.did is null
 
 
 
-#### 7.全有
+#### 7.全有union
+
+union：对两个结果集进行并集操作，不包括重复行，同时进行默认规则的排序；
+
+union All：对两个结果集进行并集操作，包括重复行，不进行排序；
 
 ```mysql
 select * from dept right outer join emp on dept.did = emp.edid
