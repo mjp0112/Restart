@@ -1,0 +1,278 @@
+## Request
+
+请求的内容信息封装在request对象中。
+
+### Request概述
+
+#### 1-1.Request的组成
+
+1. 请求行: 包含请求方式、请求的url地址、所使用的HTTP协议的版本
+2. 请求头: 一个个的键值对，每一个键值对都表示一种含义，用于客户端传递相关的信息给服务器
+3. 请求体: POST请求有请求体，里面携带的是POST请求的参数，而GET请求没有请求体
+
+
+
+#### 1-2.获取请求内容的方法
+
+##### 1-2-1 获取请求行方法
+
+```java
+//获取请求方式，如post、get
+getMethod();
+
+//获取URL 如 http://localhost:8080/web06/demo1
+getRequestURL();
+
+//获取URI 如/web06/demo1
+getRequestURI();
+
+
+//获取应用上下文路径？ 直观感受就是部署应用名，在tomcat部署时设置，如web06
+getContextPath();
+
+```
+
+
+
+##### 1-2-2 获取请求头方法
+
+```java
+//根据key值获取value
+getHeader("user-agent");
+```
+
+
+
+##### 1-2-3 获取请求体
+
+传递请求数据的三种方式
+
+1. URL地址后面附着的请求参数，例如`http://localhost:8080/app/hellServlet?username=汤姆`
+
+2. 表单携带请求参数
+3. Ajax请求携带请求参数(后续会学习)
+
+```java
+//	获取单个数值
+String name = request.getParameter("username");
+
+//获取多个值
+String[] hobbies = request.getParameterValues("hobbies");
+
+//一次性获取所有请求参数，以Map存储
+Map<String,String[]> parameterMap = request.getParameterMap();
+parameterMap.forEach((k,v)->{
+    for(String s:v){
+        sout(k+":"+v);
+    }
+}
+
+);
+```
+
+
+
+#### 1-3.解决请求参数乱码
+
+tomcat7.0以后get请求不会乱码，但post请求有可能乱码。
+
+前端是使用UTF-8编码的，所以后端可以改变编码集；
+
+```java
+request.setCharacterEncoding("UTF-8");
+```
+
+
+
+#### 1-4.请求转发
+
+请求转发是从一个资源跳转到另一个资源，在这个过程中客户端不会发起新的请求；
+
+##### 请求转发API
+
+```java
+request.getRequestDispatcher("转发路径").forward(request,repons);
+```
+
+如果不是请求转发，那么绝对路径是目标资源URI；如果是，则是目标资源URI省略部署项目名；
+
+```java
+request.getRequestDispatcher("/demo02").forward(request,repons);
+```
+
+==注意==
+
+1. 请求转发的跳转是由服务器发起的，在这个过程中浏览器只会发起一次请求
+2. 请求转发只能跳转到本项目的资源，但是可以跳转到WEB-INF中的资源
+
+​	**request.getRequestDispatcher("/WEB-INF/a.html").forward(request,repons);**
+
+3. 请求转发==不会改变地址栏的地址==
+
+
+
+#### 1-5.请求域对象
+
+全局域（ServletContext）是整个项目范围的所有动态资源都能够共享的一个范围；而请求域的范围只是在一次请求中的动态资源能够共享的一个范围
+
+```java
+request.setArrtibute(String key,Object value);
+```
+
+
+
+## JavaBean
+
+JavaBean主要用于存储内存中的数据，以及提供方法便于使用者获取数据。
+
+#### 要求
+
+1. 类必须是公有的
+2. 必须有无参构造函数
+3. 属性私有，使用private修饰
+4. 针对所有的私有属性，提供对应的set和get方法
+5. 建议重写toString()方法，便于打印对象
+6. 基本类型简写使用包装类型  
+7. 
+
+##### 使用JavaBean存储数据的优缺点
+
+**优点:**
+
+1. 面向对象的良好诠释、
+2. 数据结构清晰，便于团队开发 & 后期维护
+3. 代码足够健壮，可以排除掉编译期错误
+4. Map存储数据的缺点都是JavaBean存储数据的优点
+
+**缺点:**
+
+代码量增多，需要花时间去封装JavaBean类
+
+
+
+####  API方法介绍
+
+```java
+BeanUtils.populate(JavaBean对象,parameterMap);
+```
+
+##### 使用步骤
+
+1. 导入对应的jar包
+2. 调用BeanUtils类的populate方法，传入对应的参数就可以了
+
+
+
+
+
+## Response
+
+在Servlet API中，定义了一个HttpServletResponse接口(doGet,doPost方法的参数)，它继承自ServletResponse接口，专门用来封装HTTP响应消息。由于HTTP响应消息分为响应行、响应头、响应体三部分，因此，在HttpServletResponse接口中定义了向客户端发送响应状态码、响应头、响应体的方法。
+
+**相当于值传递，这个response是由服务器创建传入，然后我们往该对象里set值**
+
+==解决乱码==
+
+```java
+response.setContentType("text/html;charset=UTF-8");
+```
+
+
+
+### 设置Response
+
+由于是使用HTTP协议进行传输，所以reponse主要可以设置三样属性。
+
+1. 响应行: 包含响应状态码、状态码描述信息、HTTP协议的版本
+
+```java
+reponse.setStatus(404);
+```
+
+2. 响应头: 一个个的键值对，每一个键值对都包含了具有各自含义的发送给客户端的信息
+
+3. 响应体: 用于展示在客户端的文本、图片，或者供客户端下载或播放的内容
+
+
+
+#### 设置响应头
+
+
+
+
+
+#### 设置响应体信息
+
+```java
+response.getWriter.write("helloworld");
+```
+
+
+
+#### 使用response响应一个文件
+
+```java
+//1.使用字节输入流读取图片
+String realPath  = getServletContext().getRealPath("img/mm.jpg");
+InputStream is = new FileInputStream(realpath);
+
+//2.使用字节输出流，输出图片
+ServletOutputStream os = respoonse.getOutputStram();
+
+int len = 0;
+byte[] buffer = new byte[1024];
+while((len = is.read(buffer)) != -1){
+    os.write(buffer,0,len);
+}
+os.close();
+is.close();
+```
+
+另外可以给前端传输数据类型
+
+```java
+String mimeType = getServletContext().getMimeType("mm.jpg"); //为什么不需要详细路径
+
+response.setContentType(mimetype);
+```
+
+
+
+
+
+### 重定向
+
+重定向是由项目中的一个资源跳转到另一个资源，在这个过程中==客户端会发起新的请求==。
+
+
+
+#### 重定向的两种方法
+
+```java
+//方法一
+response.setStatus(302);
+response.setHeader("location","/web/demo03");
+
+//方法二,其实就是对方法一的封装
+response.sendRedict("路径");
+
+```
+
+其实就是将状态码和路径发送给浏览器，浏览器收到状态码之后，请求到相应路径。
+
+
+
+#### 重定向的特征
+
+1. 重定向的跳转是由浏览器发起的，在这个过程中浏览器会发起两次请求
+2. 重定向跳转可以跳转到任意服务器的资源，但是无法访问WEB-INF中的资源
+3. 重定向跳转浏览器的地址栏中的地址会变成跳转到的路径
+
+
+
+#### 重定向和请求转发的对比
+
+1. 重定向会由浏览器发起新的请求，而请求转发不会发起新的请求
+2. 重定向可以访问任意互联网资源，而请求转发只能访问本项目资源
+3. 重定向不能访问本项目的WEB-INF内的资源，而请求转发可以访问本项目的WEB-INF内的资源
+4. 发起重定向的资源和跳转到的目标资源没在同一次请求中，所以重定向不能在请求域中使用；而发起请求转发的资源和跳转到的目标资源在同一次请求中，所以请求转发可以在请求域中使用

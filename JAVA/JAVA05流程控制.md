@@ -20,7 +20,7 @@ java.util.Scanner sc =new Scanner(System.in);
 //获取
 sc.nextInt();
 sc.nextDobule();
-sc.next();      //String.只能去空格前的内容
+sc.next();      //String.只能取空格前的内容
 sc.nextLine();  // 一整行,但是读取到上面的空格会直接空行
 ```
 
@@ -40,7 +40,7 @@ sc.nextLine();  // 一整行,但是读取到上面的空格会直接空行
 
 语法：if(条件1){代码块1} else{代码块2}
 
-==当大括号中只有一行代码，大括号可以省略；但如果是变量的声明，不可以省略！因为变量的作用域没用==
+==当大括号中只有一行代码，大括号可以省略；但如果是变量的声明，不可以省略！因为变量的作用域问题，没用==
 
 ##### 多分支
 
@@ -87,8 +87,6 @@ switch(变量名){
             b1=true;
         }
         System.out.print("b1="+b1+";b2="+b2);
-
-
 
 
 

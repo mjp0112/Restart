@@ -65,7 +65,7 @@ public class Demo{
 >
 > 3.其他类使用该类内部类
 >
-> ​	Outher.Inner inner = new Outher().new Inner()；
+> ​	==Outher.Inner inner = new Outher().new Inner()；==
 
 
 
@@ -74,7 +74,7 @@ public class Demo{
 内部类的属性命名与外部类属性名冲突；
 
 ```java
-this.内容; //但前对象
+this.内容; //当前对象
 外部类名.this.内容; //访问外部类属性
 ```
 

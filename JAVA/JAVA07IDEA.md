@@ -17,3 +17,11 @@
 for循环	fori
 
 foreach	iter
+
+
+
+### 创建自定义快捷键提示
+
+Setting--->Live Templates---->一般配置在other选项下，或者新添加自定义组别
+
+![image-20220514201010232](JAVA07IDEA.assets/image-20220514201010232.png)

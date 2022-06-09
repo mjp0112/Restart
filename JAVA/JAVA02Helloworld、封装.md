@@ -78,7 +78,7 @@ public class HelloWorld{
 
 源文件名和类型：
 
-*一个java文件里，是否可以声明多个类
+一个java文件里，是否可以声明多个类
 
 1. 类名不能一致
 2. 一个java文件内只允许有一个public
