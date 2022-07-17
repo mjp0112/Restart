@@ -10,6 +10,20 @@ limit m,n
 
 
 
+#### ==加载顺序==
+
+> 1.先加载from，确认拉取哪个表；
+>
+> 2.where条件限制，如果没有，where 1=1
+>
+> 3.group by 和having
+>
+> 4.聚合函数sum、avg、max等运行在group by 之后，having之前，所以不能用在where条件中
+>
+> 5.select语句
+>
+> 6.order by
+
 
 
 #### 去重操作 distinct：
@@ -19,8 +33,6 @@ select distinct ename from emp
 ```
 
 ==mysql可以存储空格字符==
-
-
 
 
 

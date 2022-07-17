@@ -61,7 +61,7 @@ public enum Gender2{
 
 两个获取名称方法：
 
-name(); 不可以重写，fnal修饰
+name(); 不可以重写，final修饰
 
 toString(); 可以重写，不重写返回name()
 
