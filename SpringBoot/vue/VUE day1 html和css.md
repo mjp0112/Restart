@@ -26,13 +26,41 @@ Hyper Text Markup Language，超文本标记语言；
 
 
 
-### 标题：
+### 标题
 
 ​	<h1>......<h6> 标题大小
 
-### 段落：
+### 段落
 
 ​	<p> </p>
+
+
+
+### 换行标签
+
+<br/>
+
+
+
+### 无序列表标签
+
+```html
+<ul>
+    <li>Apple</li>
+    <li>Banana</li>
+    <li>Grape</li>
+</ul>
+```
+
+面效果
+
+<img src="VUE day1 html和css.assets/img035.png" style="zoom:50%;" />
+
+
+
+
+
+
 
 
 
@@ -41,11 +69,29 @@ Hyper Text Markup Language，超文本标记语言；
 #### 	1.图像标签和属性：
 
 ```html
-	    <img src="url" alt="some_text">  //没有闭合标签，alt为预备可替换文本
+<img src="url" alt="some_text">  //没有闭合标签，alt为预备可替换文本
 
+//超链接
+<a href="../01_html的入门/start.html">跳转到start.html页面</a><br/>
 ```
 
 
+
+### 块标签
+
+span style="color:blue;font-weight:bold;">『块』</span>并不是为了显示文章内容的，而是为了方便结合CSS对页面进行布局。块有两种，div是前后有换行的块，span是前后没有换行的块。
+
+把下面代码粘贴到HTML文件中查看他们的区别：
+
+```html
+<div style="border: 1px solid black;width: 100px;height: 100px;">This is a div block</div>
+<div style="border: 1px solid black;width: 100px;height: 100px;">This is a div block</div>
+
+<span style="border: 1px solid black;width: 100px;height: 100px;">This is a span block</span>
+<span style="border: 1px solid black;width: 100px;height: 100px;">This is a span block</span>
+```
+
+<img src="VUE day1 html和css.assets/img038.png" style="zoom:50%;" />
 
 
 

@@ -86,9 +86,7 @@ Git 有三个工作区域：工作目录（working directory）、暂存区(stag
 
 ==提交到远程仓库== git push
 
-
-
-![image-20211206191727659](Git基本操作.assets/image-20211206191727659.png)
+![image-20220717191657907](Git基本操作.assets/image-20220717191657907.png)
 
 
 
@@ -97,8 +95,6 @@ Git 有三个工作区域：工作目录（working directory）、暂存区(stag
 ssh-keygen -t rsa   生成公钥秘钥
 
 生成的公钥放在C盘用户目录下的.ssh文件夹。
-
-
 
 
 
