@@ -70,7 +70,7 @@ mvn dependency：list
 
 A依赖B，B依赖C：
 
-- 可以传递，但B依赖C时，依赖范围为compile；
+- 可以传递，但B依赖C使用范围为compile；
 - 其余依赖范围，不可以传递
 
 
@@ -93,7 +93,9 @@ A依赖B，B依赖C：
 
 ### 继承
 
-父文件
+父文件----打包方式为pom
+
+- 通过dependencyManagement来统一管理jar包
 
 ```xml
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
@@ -164,7 +166,7 @@ A依赖B，B依赖C：
 
 
 
-子工程
+子工程---<parent>标签配置父子关系
 
 ```xml
  <!-- 在子工程中通过parent标签配置继承 -->

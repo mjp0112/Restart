@@ -27,8 +27,22 @@ Apache软件基金会组织下软件工具
 配置本地仓库
 
 ```xml
-D:\desitory\maven desitory
+<!-- localRepository
+| The path to the local repository maven will use to store artifacts.
+|
+| Default: ${user.home}/.m2/repository
+<localRepository>/path/to/local/repo</localRepository>
+-->
+<localRepository>D:\maven-rep1026</localRepository>
 ```
+
+本地仓库这个目录，我们手动创建一个空的目录即可。
+
+<span style="color:blue;font-weight:bold;">记住</span>：一定要把localRepository标签<span style="color:blue;font-weight:bold;">从注释中拿出来</span>。
+
+<span style="color:blue;font-weight:bold;">注意</span>：本地仓库本身也需要使用一个<span style="color:blue;font-weight:bold;">非中文、没有空格</span>的目录。
+
+
 
 配置阿里云镜像仓库：
 
