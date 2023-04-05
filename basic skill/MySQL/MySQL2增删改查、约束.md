@@ -163,7 +163,8 @@ CREATE TABLE users (
 CREATE TABLE book (
   id INT,
   bname VARCHAR(100),
-  bno INT
+  bno INT,
+ 
   PRIMARY KEY(id,bno)
 )
 

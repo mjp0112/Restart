@@ -93,7 +93,7 @@
 ==封装成方法，==
 
 ```java
-pclass Person{
+public class Person{
     String name;
     int age;
     char genser;
@@ -122,7 +122,7 @@ pclass Person{
 - 无参有返回值
 - 有参有返回值
 
- ==方法里面不能嵌套方法==
+ ==方法里面不能嵌套方法（不能定义方法）==
 
 
 

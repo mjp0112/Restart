@@ -20,7 +20,6 @@ publci class Gender{
         return GIRL;
     }
     
-    
 }
 ```
 
@@ -34,12 +33,33 @@ publci class Gender{
 public enum Gender2{
     //默认有私有构造器
     //创建了两个对象
-    BOY;
+    BOY,
     GIRL;
-    
-    Boy("男孩");
 }
 ```
+
+**因为默认是无参构造，可定义有参构造方法**
+
+```java
+enum Gender{
+    BOY("男孩"),
+    GIRL("女孩"),
+    UNCERTAIN("男孩");
+
+    private final String  sex;
+   
+    private Gender(String sex){
+        this.sex = sex;
+    }
+
+    public String getGender(){
+        return sex;
+    }
+}
+
+```
+
+
 
 #### 特点：
 
@@ -59,7 +79,7 @@ public enum Gender2{
 
 ##### 枚举类存在一个默认的父类Enum
 
-两个获取名称方法：
+两个获取名称方法：（==及上述代码中的BOY、GIRL..==）
 
 name(); 不可以重写，final修饰
 
@@ -69,11 +89,13 @@ toString(); 可以重写，不重写返回name()
 
 ordinal()； 返回该实例位置/角标
 
+
+
+**枚举类方法**
+
 static values(); 返回该枚举类所有常量对象 
 
 static valueOf(String name); 返回改名字的常量对象； 
-
-
 
 
 

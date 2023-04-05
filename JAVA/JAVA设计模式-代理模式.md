@@ -34,7 +34,8 @@ class Company implements Marry{
     public Company(Marry target){
         this.target = target;
     }
-
+	
+    //实现同一个方法
     public void HappyMarry(){
         System.out.println("结婚");
         target.HappyMarry();
@@ -44,3 +45,7 @@ class Company implements Marry{
 }
 
 ```
+
+
+
+### 动态代理

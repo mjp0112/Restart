@@ -80,7 +80,7 @@ Object get(index);
 int indexOf(Object obj);
 int lastIndexOf(Object obj);
 Object remove(int ind); //rmeove(obj) 也只会删除第一个相等的对象
-Object set(int intx,Object obj);//替换
+Object set(int index,Object obj);//替换
 //左闭右开
 List subList(int fromIndex,int toIndex);
 
@@ -162,6 +162,8 @@ list.forEach(System.out::println);
 
 
 ##### HashSet底层机制
+
+HashSet的基本机制是底层维护了一个Node类型的数组table，Node会以链表的形式存储每个节点。
 
 ```java
 /*
@@ -334,13 +336,13 @@ Map/HashMap底层
 
 2.values()方法取出Collection
 
-3.entrySet()方法取出
+3.entrySet()方法取出(entrySet初始化是没有数据的，但之所以返回的set有数据是因为entrySet的iterator()方法底层最终关联了table数组)
 
 ```java
 1.keySet();
 //a.增强for;
 Set keys = map.keySet();
-for(Object key : keyset){
+for(Object key : keys){
     sout(key+"-"+map.get(key));
 }
 //迭代器
@@ -385,6 +387,10 @@ for(Object entry:entrySet){
 
 5.没有实现同步，因此线程不安全；
 
+默认的加载因子为0.75；
+
+第一次树化的默认条件是，数组长度>64且某个链表长度大于等于8
+
 
 
 
@@ -404,10 +410,12 @@ for(Object entry:entrySet){
 ```java
 1.实现了Map.Entry接口,以Entry的形式直接存储K-V,HashMap中是以Node存储;
 
-2.初始容量为11，treshold也是075，而扩容机制是newCapicity=（oldCapicity<<1）+1
-
-
+2.初始容量为11，treshold也是0.75，而扩容机制是newCapicity=（oldCapicity<<1）+1
 ```
+
+
+
+
 
 
 
@@ -454,3 +462,21 @@ replaceAll(List,String,String替换后)	替换
 ## 总结 
 
 ![image-20220406132428867](JAVA27集合类.assets/image-20220406132428867.png)
+
+
+
+## 常见面试题
+
+**1.java集合的种类**
+
+1、List(有序、可重复)
+
+List里存放的对象是有序的，同时也是可以重复的，List关注的是索引，拥有一系列和索引相关的方法，查询速度快。因为往list集合里插入或删除数据时，会伴随着后面数据的移动，所有插入删除数据速度慢。
+
+2、Set(无序、不能重复)
+
+Set里存放的对象是无序，不能重复的，集合中的对象不按特定的方式排序，只是简单地把对象加入集合中。
+
+3、Map(键值对、键唯一、值不唯一)
+
+Map集合中存储的是键值对，键不能重复，值可以重复。根据键得到值，对map集合遍历时先得到键的set集合，对set集合进行遍历，得到相应的值。

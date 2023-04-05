@@ -81,14 +81,14 @@ public class HelloWorld{
 一个java文件里，是否可以声明多个类
 
 1. 类名不能一致
-2. 一个java文件内只允许有一个public
+2. 一个java文件内只允许有一个public类
 3. 被public修饰的类的类名和文件名保持一致
 
 ==注意==
 
 * 编译完成后，会生成与class类相同数量的class文件
 * 运行时，想运行那个就运行那个
-* main类可以在任意类里，不一定要在public类里；
+* main可以在任意类里，不一定要在public类里；
 
 
 

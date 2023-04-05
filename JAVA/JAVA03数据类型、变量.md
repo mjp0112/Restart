@@ -103,6 +103,7 @@ c. 没有初始化不能使用
 
 	byte -> short -> int ->long -> float -> double 
 			char  -> int
+			boolean
 
 #### 自动转换(小->大)
 
@@ -167,7 +168,9 @@ String copyValueOf(char[] c,offset,count);
 
 ##### == 和 equals
 
-重写了equals，此外，equalsIgnoreCase不区分大小写
+经试验，==并不是判断的toString方法，而是直接对比两个对象的地址值。
+
+重写了equals，此外，equalsIgnoreCase不区分大小写。
 
 
 
@@ -210,6 +213,8 @@ split分割盘符需要////,得到的结果是//，经过java在变成 /
 ==concat()==
 
 concat()拼接，结果在堆里。
+
+**第一种拼接方式，JVM会优化成定义一个字符串；而后面则会先生成StringBuilder然后进行拼接。**
 
 ```java
 	@Test
@@ -347,6 +352,8 @@ String[] split(正则)
 ##### StringBuilder
 
 线程不安全
+
+拼接时，StringBuilder则是使用数组来完成拼接的操作，不需要开辟额外的空间
 
 
 

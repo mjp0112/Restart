@@ -16,7 +16,7 @@ public class Demo{
 class Algorithm{
     public int sum(String a,int...abc){
         int sum = 0;
-        for(int i=0;i<abc.lengthl;i++){
+        for(int i=0;i<abc.length;i++){
             sum += i;
         }
         return sum;

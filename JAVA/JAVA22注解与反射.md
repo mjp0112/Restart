@@ -139,7 +139,7 @@ public @interface Override {
 >
 > 如何根据porperties文件中配置信息，来创建一个类并且调用方法
 
-1.根据配置文件re.porperties指定信息，创建Car对象，并调用方法；
+1.根据配置文件re.porperties指定信息，创建Cat对象，并调用方法；
 
 classfullpath = com.hspedu.Cat
 
