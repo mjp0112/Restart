@@ -75,3 +75,7 @@ list[0] = new LinkedList<Integer>();   // 编译通过
 ```
 
 这里就出现问题了，声明的是 LinkedList<String> 类型的数组，但是居然成功放入了一个 LinkedList<Integer>()，这与 Java 协变数组类型有关，出现了类型安全问题，所以 Java 中不支持泛型数组。
+
+
+
+#### 
