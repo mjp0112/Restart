@@ -78,4 +78,31 @@ list[0] = new LinkedList<Integer>();   // 编译通过
 
 
 
-#### 
+### 泛型方法
+
+为什么会有泛型方法?如下静态方法里我们需要用到泛型
+
+```java
+ public class Test {
+ 
+ 
+        public static void test(T a){
+            System.out.println(a);
+        }
+ 
+ }
+```
+
+但此时，会报错“。。。。”cannot be referenced from a static context。这是因为静态方法在new对象之前已经进行了载入，所以需要提前定义要泛型，如下
+
+```java
+public class Test{
+
+        public <T> T test(T a){
+            return a;
+        }
+    
+ }
+```
+
+==注意泛型方法中的T是由实参传入时决定的，所以与类的泛型无关（也可以参考就近原则）。==

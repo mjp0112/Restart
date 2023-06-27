@@ -133,6 +133,22 @@ select count(*) from emp
 select count(*) num from emp where age>40
 ```
 
+count性能比较
+
+![img](MySQL5查询操作.assets/b3b7d0a20cf431ad2f4affdf1e171ca62fdd9863.jpeg)
+
+count(1)、 count(*)、 count(主键字段)在执行的时候，如果表里存在二级索引，优化器就会选择二级索引进行扫描。
+
+所以，如果要执行 count(1)、 count(*)、 count(主键字段) 时，尽量在数据表上建立二级索引，这样优化器会自动采用 key_len 最小的二级索引进行扫描，相比于扫描主键索引效率会高一些。
+
+再来，==就是不要使用 count(字段) 来统计记录个数，因为它的效率是最差的，会采用全表扫描的方式来统计。如果你非要统计表中该字段不为 NULL 的记录个数，建议给这个字段建立一个二级索引==。
+
+
+
+相关参考：
+
+https://baijiahao.baidu.com/s?id=1721164805396806160&wfr=spider&for=pc
+
 
 
 #### 2.sum()求和
